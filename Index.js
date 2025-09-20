@@ -7,7 +7,7 @@ const cors = require("cors");
 
 server.use(cors(
     {
-        origin : 'https://agency-website-kappa-liard.vercel.app/' 
+        origin : 'https://agency-website-kappa-liard.vercel.app' 
     }
 ))
 server.use(express.json())
