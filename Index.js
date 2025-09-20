@@ -5,14 +5,14 @@ const PortfolioRouter = require('./Routers/PortfolioRouter');
 const server = express();
 const cors = require("cors");
 
-
-server.use(express.json())
-server.use(express.static('Public'))
 server.use(cors(
     {
         origin : ['https://agency-website-kappa-liard.vercel.app/']
     }
 ))
+server.use(express.json())
+server.use(express.static('Public'))
+
 server.use('/project' , PortfolioRouter)
 
 mongoose.connect(
