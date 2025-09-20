@@ -4,7 +4,6 @@ const AdminSchema = mongoose.Schema(
     {
         email: {
             type: String,
-            maxLength: 12,
             required: true
         },
         password: {
