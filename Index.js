@@ -10,7 +10,7 @@ server.use(express.json())
 server.use(express.static('Public'))
 server.use(cors(
     {
-        origin : ['http://localhost:5173']
+        origin : ['https://agency-website-kappa-liard.vercel.app/']
     }
 ))
 server.use('/project' , PortfolioRouter)
