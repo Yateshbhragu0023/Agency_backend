@@ -1,19 +1,19 @@
 const mongoose = require('mongoose')
 
-const PricingSchema = mongoose.Schema(
+const AdminSchema = mongoose.Schema(
     {
-        title: {
+        email: {
             type: String,
             maxLength: 12,
             required: true
         },
-        heading: {
+        password: {
             type: String,
             required: true
         },
-        price: {
-            type: String,
-            required: true
+        status: {
+            type: Boolean,
+            default: true
         },
 
     },
@@ -22,6 +22,6 @@ const PricingSchema = mongoose.Schema(
     }
 )
 
-const PricingModel = mongoose.model('pricing' , PricingSchema)
+const AdminModel = mongoose.model('admin' , AdminSchema)
 
-module.exports = PricingModel ;
+module.exports = AdminModel ;
