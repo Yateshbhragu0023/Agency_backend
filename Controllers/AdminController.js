@@ -44,6 +44,42 @@ class AdminController{
             }
         )
     }
+     ReadAdmin(data){
+        return new Promise(
+           async (resolve, reject)=>{
+                try {
+                    const Admins = await AdminModel.find()
+
+                    if(Admins){
+                        resolve(
+                            {
+                                msg : "admin found succesfully",
+                                status : 1 ,
+                                admin : Admins
+                            }
+                        )
+                    }else{
+                        reject(
+                            {
+                                msg : "admin not found",
+                                status : 0
+                            }
+                        )
+                    }
+                } catch (error) {
+                    ()=>{
+                        console.log(error)
+                        reject(
+                            {
+                                msg : "internal server error",
+                                status : 0
+                            }
+                        )
+                    }
+                }
+            }
+        )
+    }
 }
 
 module.exports = AdminController ;

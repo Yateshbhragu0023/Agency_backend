@@ -17,5 +17,20 @@ AdminRouter.post(
        )
     }
 )
+AdminRouter.get(
+    '/',
+    (req, res)=>{
+       const result = new AdminController().ReadAdmin(req.body)
+       result.then(
+        (succes)=>{
+            res.send(succes)
+        }
+       ).catch(
+        (error)=>{
+            res.send(error)
+        }
+       )
+    }
+)
 
 module.exports = AdminRouter ;
